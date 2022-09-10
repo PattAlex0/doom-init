@@ -90,3 +90,9 @@
 
 (after! ess
   (map! "C-%" #'then_R_operator))
+
+
+
+;; Set Qualities
+(setq
+ projectile-project-search-path '("~/Work/"))
