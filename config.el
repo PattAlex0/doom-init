@@ -25,10 +25,23 @@
   (insert "%>%")
   (reindent-then-newline-and-indent))
 
+;; Define function to add codeblocks in R markdown
+(defun then_codeblock_operator ()
+  "R - codeblock operator"
+  (interactive)
+  (insert "```{r}")
+  (newline)
+  (newline)
+  (insert "```"))
+
 ;; Map %>% pipe to key
 (after! ess
-  (map! "C-%" #'then_R_operator))
+  (map! "C-%" #'then_R_operator)
+  (map! "C-<" #'then_codeblock_operator))
 
 ;; Set Qualities
 (setq
  projectile-project-search-path '("~/Work/"))
+
+;; Turn off smartparens
+(remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
