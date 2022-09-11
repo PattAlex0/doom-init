@@ -14,7 +14,7 @@
 
 ;; Associate poly-r with Rmd files
 (add-to-list 'auto-mode-alist
-        '("\\.[rR]md\\'" . poly-gfm+r-mode)
+        '("\\.[rR]md\\'" . poly-gfm+r-mode))
 
 ;; Define function to add %>% pipe
 ;; Taken from https://emacs.stackexchange.com/questions/8041/how-to-implement-the-piping-operator-in-ess-mode
@@ -29,6 +29,6 @@
 (after! ess
   (map! "C-%" #'then_R_operator))
 
-;; Set project path
+;; Set Qualities
 (setq
  projectile-project-search-path '("~/Work/"))
